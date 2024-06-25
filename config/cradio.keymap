@@ -206,6 +206,8 @@
     };
 
     macros {
+
+      // Dead keys
         grave: grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -234,88 +236,175 @@
             label = "DIAERESIS";
         };
 
-        egrave: egrave {
+        // Current French accents min
+        egrave_min: egrave_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&grave &kp K>;
-            label = "EGRAVE";
+            label = "EGRAVE_MIN";
         };
 
-        agrave: agrave {
+        agrave_min: agrave_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&grave &kp A>;
-            label = "AGRAVE";
+            label = "AGRAVE_MIN";
         };
 
-        ugrave: ugrave {
+        ugrave_min: ugrave_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&grave &kp I>;
-            label = "UGRAVE";
+            label = "UGRAVE_MIN";
         };
 
-        eacute: eacute {
+        eacute_min: eacute_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&acute &kp K>;
-            label = "EACUTE";
+            label = "EACUTE_MIN";
         };
 
-        acircumflex: acircumflex {
+        acircumflex_min: acircumflex_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&circumflex &kp A>;
-            label = "ACIRCUMFLEX";
+            label = "ACIRCUMFLEX_MIN";
         };
 
-        ecircumflex: ecircumflex {
+        ecircumflex_min: ecircumflex_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&circumflex &kp K>;
-            label = "ECIRCUMFLEX";
+            label = "ECIRCUMFLEX_MIN";
         };
 
-        icircumflex: icircumflex {
+        icircumflex_min: icircumflex_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&circumflex &kp L>;
-            label = "ICIRCUMFLEX";
+            label = "ICIRCUMFLEX_MIN";
         };
 
-        ocircumflex: ocircumflex {
+        ocircumflex_min: ocircumflex_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&circumflex &kp SEMICOLON>;
-            label = "OCIRCUMFLEX";
+            label = "OCIRCUMFLEX_MIN";
         };
 
-        ucircumflex: ucircumflex {
+        ucircumflex_min: ucircumflex_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&circumflex &kp I>;
-            label = "ACIRCUMFLEX";
+            label = "ACIRCUMFLEX_MIN";
         };
 
-        ae: ae {
+        ae_min: ae_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RA(Z)>;
-            label = "AE";
+            label = "AE_MIN";
         };
 
-        oe: oe {
+        oe_min: oe_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RA(B)>;
-            label = "OE";
+            label = "OE_MIN";
         };
 
-        idiaeresis: idiaeresis {
+        idiaeresis_min: idiaeresis_min {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&diaeresis &kp L>;
-            label = "IDIAERESIS";
+            label = "IDIAERESIS_MIN";
+        };
+
+
+        // Current French accents maj
+        egrave_maj: egrave_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&grave &kp LS(K)>;
+            label = "EGRAVE_MAJ";
+        };
+
+        agrave_maj: agrave_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&grave &kp LS(A)>;
+            label = "AGRAVE_MAJ";
+        };
+
+        ugrave_maj: ugrave_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&grave &kp LS(I)>;
+            label = "UGRAVE_MAJ";
+        };
+
+        eacute_maj: eacute_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&acute &kp LS(K)>;
+            label = "EACUTE_MAJ";
+        };
+
+        acircumflex_maj: acircumflex_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp LS(A)>;
+            label = "ACIRCUMFLEX_MAJ";
+        };
+
+        ecircumflex_maj: ecircumflex_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp LS(K)>;
+            label = "ECIRCUMFLEX_MAJ";
+        };
+
+        icircumflex_maj: icircumflex_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp LS(L)>;
+            label = "ICIRCUMFLEX_MAJ";
+        };
+
+        ocircumflex_maj: ocircumflex_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp LS(SEMICOLON)>;
+            label = "OCIRCUMFLEX_MAJ";
+        };
+
+        ucircumflex_maj: ucircumflex_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp LS(I)>;
+            label = "ACIRCUMFLEX_MAJ";
+        };
+
+        ae_maj: ae_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(RA(Z))>;
+            label = "AE_MAJ";
+        };
+
+        oe_maj: oe_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(RA(B))>;
+            label = "OE_MAJ";
+        };
+
+        idiaeresis_maj: idiaeresis_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&diaeresis &kp LS(L)>;
+            label = "IDIAERESIS_MAJ";
         };
     };
 
