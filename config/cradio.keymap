@@ -191,14 +191,14 @@
         grave: grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(R)>;
+            bindings = <&kp RA(S)>;
             label = "GRAVE";
         };
 
         acute: acute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(T)>;
+            bindings = <&kp RA(F)>;
             label = "ACUTE";
         };
 
@@ -212,14 +212,14 @@
         diaeresis: diaeresis {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(D)>;
+            bindings = <&kp RA(V)>;
             label = "DIAERESIS";
         };
 
         egrave: egrave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&grave &kp E>;
+            bindings = <&grave &kp K>;
             label = "EGRAVE";
         };
 
@@ -233,17 +233,16 @@
         ugrave: ugrave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&grave &kp U>;
+            bindings = <&grave &kp I>;
             label = "UGRAVE";
         };
 
         eacute: eacute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&acute &kp E>;
+            bindings = <&acute &kp K>;
             label = "EACUTE";
         };
-
 
         acircumflex: acircumflex {
             compatible = "zmk,behavior-macro";
@@ -251,53 +250,6 @@
             bindings = <&circumflex &kp A>;
             label = "ACIRCUMFLEX";
         };
-        ecircumflex: ecircumflex {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&circumflex &kp E>;
-            label = "ECIRCUMFLEX";
-        };
-        icircumflex: icircumflex {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&circumflex &kp I>;
-            label = "ICIRCUMFLEX";
-        };
-        ocircumflex: ocircumflex {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&circumflex &kp O>;
-            label = "OCIRCUMFLEX";
-        };
-        ucircumflex: ucircumflex {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&circumflex &kp U>;
-            label = "UCIRCUMFLEX";
-        };
-
-        ae: ae {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(Z)>;
-            label = "AE";
-        };
-        oe: oe {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(V)>;
-            label = "OE";
-        };
-
-        ccedilla: ccedilla {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(C)>;
-            label = "CCEDILLA";
-        };
-
-
-
     };
 
     keymap {
@@ -332,10 +284,10 @@
 
         French {
             bindings = <
-&trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp RA(E)  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
-                        &trans     &trans    &trans  &trans
+&trans  &trans  &trans   &trans   &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &egrave  &eacute  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans   &trans   &trans    &trans  &trans  &trans  &trans  &trans
+                         &trans   &trans    &trans  &trans
             >;
         };
 
