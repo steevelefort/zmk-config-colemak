@@ -244,12 +244,60 @@
             label = "EACUTE";
         };
 
+
         acircumflex: acircumflex {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&circumflex &kp A>;
             label = "ACIRCUMFLEX";
         };
+        ecircumflex: ecircumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp E>;
+            label = "ECIRCUMFLEX";
+        };
+        icircumflex: icircumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp I>;
+            label = "ICIRCUMFLEX";
+        };
+        ocircumflex: ocircumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp O>;
+            label = "OCIRCUMFLEX";
+        };
+        ucircumflex: ucircumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp U>;
+            label = "UCIRCUMFLEX";
+        };
+
+        ae: ae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(Z)>;
+            label = "AE";
+        };
+        oe: oe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(V)>;
+            label = "OE";
+        };
+
+        ccedilla: ccedilla {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(C)>;
+            label = "CCEDILLA";
+        };
+
+
+
     };
 
     keymap {
