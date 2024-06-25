@@ -250,6 +250,37 @@
             bindings = <&circumflex &kp A>;
             label = "ACIRCUMFLEX";
         };
+        ecircumflex: ecircumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp K>;
+            label = "ECIRCUMFLEX";
+        };
+        icircumflex: icircumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp L>;
+            label = "ICIRCUMFLEX";
+        };
+        ocircumflex: ocircumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp A>;
+            label = "OCIRCUMFLEX";
+        };
+        ucircumflex: ucircumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp I>;
+            label = "ACIRCUMFLEX";
+        };
+
+
+
+
+
+
+
     };
 
     keymap {
