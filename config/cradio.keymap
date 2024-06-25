@@ -169,40 +169,6 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <250>;
         };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        FnLayer {
-            bindings = <&mo 5>;
-            key-positions = <30 31>;
-        };
-
-        FastEsc {
-            bindings = <&kp ESC>;
-            key-positions = <12 30>;
-        };
-
-        FastTab {
-            bindings = <&kp TAB>;
-            key-positions = <30 13>;
-        };
-
-        FastBackTab {
-            bindings = <&kp TAB>;
-            key-positions = <30 11>;
-        };
-
-        FastDelete {
-            bindings = <&kp DEL>;
-            key-positions = <30 14>;
-        };
-
-        FastBackspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <30 10>;
-        };
 
         egrave: egrave {
           label = "EGRAVE";
@@ -302,6 +268,41 @@
 
 
 
+
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        FnLayer {
+            bindings = <&mo 5>;
+            key-positions = <30 31>;
+        };
+
+        FastEsc {
+            bindings = <&kp ESC>;
+            key-positions = <12 30>;
+        };
+
+        FastTab {
+            bindings = <&kp TAB>;
+            key-positions = <30 13>;
+        };
+
+        FastBackTab {
+            bindings = <&kp TAB>;
+            key-positions = <30 11>;
+        };
+
+        FastDelete {
+            bindings = <&kp DEL>;
+            key-positions = <30 14>;
+        };
+
+        FastBackspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <30 10>;
+        };
 
 
     };
