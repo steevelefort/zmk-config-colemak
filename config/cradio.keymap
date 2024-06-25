@@ -203,6 +203,107 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <30 10>;
         };
+
+        egrave: egrave {
+          label = "EGRAVE";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&egrave_min>, <&egrave_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        }
+
+        agrave: agrave {
+            label = "AGRAVE";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&agrave_min>, <&agrave_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ugrave: ugrave {
+            label = "UGRAVE";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&ugrave_min>, <&ugrave_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        eacute: eacute {
+            label = "EACUTE";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&eacute_min>, <&eacute_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        acircumflex: acircumflex {
+            label = "ACIRCUMFLEX";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&ecircumflex_min>, <&ecircumflex_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ecircumflex: ecircumflex {
+            label = "ECIRCUMFLEX";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&ecircumflex_min>, <&ecircumflex_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        icircumflex: icircumflex {
+            label = "ICIRCUMFLEX";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&ecircumflex_min>, <&ecircumflex_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ocircumflex: ocircumflex {
+            label = "OCIRCUMFLEX";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&ecircumflex_min>, <&ecircumflex_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ucircumflex: ucircumflex {
+            label = "ACIRCUMFLEX";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&ecircumflex_min>, <&ecircumflex_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ae: ae {
+            label = "AE";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&ae_min>, <&ae_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        oe: oe {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&oe_min>, <&oe_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "OE";
+        };
+
+        idiaeresis: idiaeresis {
+            label = "IDIAERESIS";
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&idiaeresis_min>, <&idiaeresis_maj>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+
+
+
+
     };
 
     macros {
