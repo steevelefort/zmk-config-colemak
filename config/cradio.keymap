@@ -210,7 +210,7 @@
           #binding-cells = <0>;
           bindings = <&egrave_min>, <&egrave_maj>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
-        }
+        };
 
         agrave: agrave {
             label = "AGRAVE";
