@@ -1,0 +1,229 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+#define NAV_L 1
+#define OTHER_L 2
+#define NUM_L 3
+#define SYM_L 4
+
+// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+//&lt { quick-tap-ms = <200>; };
+
+/ {
+    behaviors {
+        //#ifndef HOMEY_HOLDING_TYPE
+        //#define HOMEY_HOLDING_TYPE "balanced"
+        //#endif
+        //#ifndef HOMEY_HOLDING_TIME
+        //#define HOMEY_HOLDING_TIME 270
+        //#endif
+        //#ifndef HOMEY_STREAK_DECAY
+        //#define HOMEY_STREAK_DECAY 170
+        //#endif
+        //#ifndef HOMEY_REPEAT_DECAY
+        //#define HOMEY_REPEAT_DECAY 300 // "tap then hold" for key auto-repeat
+        //#endif
+
+        hml: hml {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <250>;
+
+            //require-prior-idle-ms = <170>;
+
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            //label = "Home row left";
+            //hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 32>;
+
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
+        };
+
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <250>;
+
+            //require-prior-idle-ms = <170>;
+
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            //label = "Home row right";
+            //hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
+
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 30>;
+        };
+
+        tapmod_thumb: miryoku_tapmod_thumb {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_MOD_THUMB";
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 31 30 32 33>; // wait for other home row mods
+            tapping-term-ms = <200>;
+            quick-tap-ms = <250>;
+
+            //require-prior-idle-ms = <170>;
+
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            //retro-tap;
+        };
+
+        layer_thumb: miryoku_home_row_layer_thumb {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_LAYER_THUMB";
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29>; // wait for other home row mods
+            tapping-term-ms = <200>;
+            quick-tap-ms = <250>;
+
+            //require-prior-idle-ms = <170>;
+
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            //retro-tap;
+        };
+
+        taphold: taphold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPHOLD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
+
+        tapholdlong: tapholdlong {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPHOLDLONG";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <250>;
+        };
+
+        hrmcaps: hrmcaps {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <250>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&caps_word>;
+
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
+            label = "HRMCAPS";
+        };
+
+        sticky_layer_thumb: sticky_layer_thumb {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_LAYER_THUMB";
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <250>;
+            #binding-cells = <2>;
+            bindings = <&mo>, <&sk>;
+        };
+
+        sticky_thumb: sticky_thumb {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_THUMB";
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <250>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&sk>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        FnLayer {
+            bindings = <&mo 3>;
+            key-positions = <30 31>;
+        };
+
+        FastEsc {
+            bindings = <&kp ESC>;
+            key-positions = <12 30>;
+        };
+
+        FastTab {
+            bindings = <&kp TAB>;
+            key-positions = <30 13>;
+        };
+
+        FastBackTab {
+            bindings = <&kp TAB>;
+            key-positions = <30 11>;
+        };
+
+        FastDelete {
+            bindings = <&kp DEL>;
+            key-positions = <30 14>;
+        };
+
+        FastBackspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <30 10>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+&kp Q        &kp W             &kp E         &kp R                 &kp T                                  &kp Y                              &kp U                 &kp I            &kp O             &kp P
+&hml LGUI A  &hml RIGHT_ALT S  &hml LCTRL D  &hml LSHFT F          &hml LEFT_ALT G                        &hmr LEFT_ALT H                    &hmr RSHFT J          &hmr RCTRL K     &hmr RIGHT_ALT L  &hmr LGUI SEMI
+&kp Z        &kp X             &hml LALT C   &kp V                 &kp B                                  &kp N                              &kp M                 &hmr LALT COMMA  &kp PERIOD        &kp FSLH
+                                             &layer_thumb 1 SPACE  &sticky_thumb LEFT_SHIFT LEFT_SHIFT    &sticky_thumb RIGHT_ALT RIGHT_ALT  &layer_thumb 2 ENTER
+            >;
+        };
+
+        Nav {
+            bindings = <
+&trans      &trans                 &kp TAB                &trans                     &trans        &trans                    &trans                       &trans                   &trans           &trans
+&trans      &hml RIGHT_ALT DELETE  &hml LCTRL ESCAPE      &hml LEFT_SHIFT BACKSPACE  &trans        &hmr LEFT_ALT LEFT_ARROW  &hmr RIGHT_SHIFT DOWN_ARROW  &hmr RCTRL UP_ARROW      &hmr RALT RIGHT  &hmr LEFT_GUI PRINTSCREEN
+&caps_word  &trans                 &hml LEFT_ALT LS(TAB)  &trans                     &caps_word    &kp HOME                  &kp PAGE_DOWN                &hmr LEFT_ALT PAGE_DOWN  &kp END          &trans
+                                                          &trans                     &trans        &trans                    &trans
+            >;
+        };
+
+        Numeric {
+            bindings = <
+&kp LS(NUMBER_1)    &kp LS(NUMBER_2)         &kp LS(NUMBER_3)     &kp LS(NUMBER_4)     &kp LS(N5)                &kp LS(NUMBER_6)        &kp LS(N7)     &kp LS(N8)     &kp LS(N9)         &kp LS(N0)
+&hml LGUI NUMBER_1  &hml RIGHT_ALT NUMBER_2  &hml LCTRL NUMBER_3  &hml LSHFT NUMBER_4  &hml LEFT_ALT NUMBER_5    &hmr LEFT_ALT NUMBER_6  &hmr RSHFT N7  &hmr RCTRL N8  &hmr RIGHT_ALT N9  &hmr LGUI N0
+&kp F1              &kp F2                   &kp F3               &kp F4               &kp F5                    &kp F6                  &kp F7         &kp F8         &kp F9             &kp F10
+                                                                  &kp F11              &kp F12                   &kp F11                 &kp F12
+            >;
+        };
+
+        Media {
+            bindings = <
+&trans        &trans        &trans        &trans        &trans            &trans  &trans             &trans           &trans      &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR_ALL    &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE  &trans
+&trans        &trans        &trans        &trans        &trans            &trans  &trans             &trans           &trans      &trans
+                                          &trans        &trans            &trans  &trans
+            >;
+        };
+    };
+};
