@@ -157,7 +157,7 @@
         compatible = "zmk,combos";
 
         FnLayer {
-            bindings = <&mo 3>;
+            bindings = <&mo 5>;
             key-positions = <30 31>;
         };
 
@@ -184,6 +184,71 @@
         FastBackspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <30 10>;
+        };
+    };
+
+    macros {
+        grave: grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(R)>;
+            label = "GRAVE";
+        };
+
+        acute: acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(T)>;
+            label = "ACUTE";
+        };
+
+        circumflex: circumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(X)>;
+            label = "CIRCUMFLEX";
+        };
+
+        diaeresis: diaeresis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(D)>;
+            label = "DIAERESIS";
+        };
+
+        egrave: egrave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&grave &kp E>;
+            label = "EGRAVE";
+        };
+
+        agrave: agrave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&grave &kp A>;
+            label = "AGRAVE";
+        };
+
+        ugrave: ugrave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&grave &kp U>;
+            label = "UGRAVE";
+        };
+
+        eacute: eacute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&acute &kp E>;
+            label = "EACUTE";
+        };
+
+        acircumflex: acircumflex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&circumflex &kp A>;
+            label = "ACIRCUMFLEX";
         };
     };
 
@@ -214,6 +279,24 @@
 &hml LGUI NUMBER_1  &hml RIGHT_ALT NUMBER_2  &hml LCTRL NUMBER_3  &hml LSHFT NUMBER_4  &hml LEFT_ALT NUMBER_5    &hmr LEFT_ALT NUMBER_6  &hmr RSHFT N7  &hmr RCTRL N8  &hmr RIGHT_ALT N9  &hmr LGUI N0
 &kp F1              &kp F2                   &kp F3               &kp F4               &kp F5                    &kp F6                  &kp F7         &kp F8         &kp F9             &kp F10
                                                                   &kp F11              &kp F12                   &kp F11                 &kp F12
+            >;
+        };
+
+        French {
+            bindings = <
+&trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp RA(E)  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans
+                        &trans     &trans    &trans  &trans
+            >;
+        };
+
+        Code {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans    &trans  &trans
             >;
         };
 
