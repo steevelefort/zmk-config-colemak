@@ -31,6 +31,15 @@
         //#define HOMEY_REPEAT_DECAY 300 // "tap then hold" for key auto-repeat
         //#endif
 
+  slnm: sticky_layer_no_mods {
+        compatible = "zmk,behavior-sticky-layer";
+        #binding-cells = <1>;
+        bindings = <&mo>;
+        release-after-ms = <1000>;
+        quick-release;
+        ignore-modifiers;
+      };
+
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             flavor = "tap-preferred";
